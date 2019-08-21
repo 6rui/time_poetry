@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>time poetry</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container page-header">
+    <h1>python学习笔记
+        <small> ——by fingerplay</small>
+    </h1>
+</div>
+<div class="container page-body">
+    <div class="col-md-9" role="main">
+        {% for artile in article_list %}
+            <div>
+                <h2>{{ artile.title }}</h2>
+                <p>{{ artile.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-3" role="complementary">
+        <div>
+            <h3>最新文章</h3>
+            {% for newest_article in newest_list %}
+                <h4><a href="#">{{ newest_article.title }}</a></h4>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
